@@ -1,4 +1,4 @@
-# Installation On Ubuntu
+# Installation Of Ansible On Ubuntu
 ```
 sudo apt update
 sudo apt install software-properties-common
