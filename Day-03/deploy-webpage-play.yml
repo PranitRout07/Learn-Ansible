@@ -1,0 +1,16 @@
+-
+  name: Install Nginx
+  hosts: servers
+  tasks:
+    - name: Install Nginx Command
+      command: apt install nginx -y
+    - name: Start nginx
+      command: service nginx start
+    - name: Show the Nginx Status
+      command: service nginx status
+    - name: Deploy Webpage
+      copy:
+        src: index.html
+        dest: /var/www/html/
+
+# make sure that the port 80 open in the servers .
