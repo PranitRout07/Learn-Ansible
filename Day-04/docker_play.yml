@@ -1,0 +1,14 @@
+-
+  name: Install Docker and Check Its status
+  hosts: servers
+  tasks:
+    - name: Install docker
+      command: apt install docker.io -y
+    - name: Check docker service status
+      command: docker info
+    - name: Start a nginx service using docker
+      command: docker run -d -p 4000:80 --name nginx nginx:latest
+    - name: See currently running docker containers
+      command: docker ps
+
+# here the slave is running using :- docker run -itd --privileged -v /var/run/docker.sock:/var/run/docker.sock -p 80:80 --name slave saved-slave /bin/bash
